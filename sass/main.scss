@@ -72,7 +72,7 @@ a {
         border-radius: 50px;
         box-shadow: 2px 2px 8px $shadow;
         &:active {
-            background: linear-gradient(355deg, rgba($color-primary,0.9), rgba($color-secondary,0.9));
+            background: linear-gradient(355deg, rgba($color-primary,0.86), rgba($color-secondary,0.86));
             box-shadow: 10px 10px 20px $shadow;
             transition-duration: 1500ms;
         }
@@ -247,6 +247,7 @@ a {
             font-size: 1.7em;
             font-weight: 500;
             font-family: 'Shrikhand', sans-serif;
+            margin-bottom: 15px;
         }
         &__favorites {
             display: flex;
@@ -254,12 +255,13 @@ a {
             justify-content: space-around;
 
             span {
+                padding-bottom: 15px;
                 font-size: 1.7em;
             }
         }
 }
 
-.starters {
+.starters, .main_dish, .desserts {
     overflow: hidden;
     padding: 0 10px;
 
@@ -267,8 +269,86 @@ a {
         text-transform: uppercase;
         font-weight: 400;
         position: relative;
-        padding-bottom: 10px;
-        border-bottom: $bg-color solid 5px;
-        width: 3em;
+        border-bottom: $color-tertiary solid 4px;
+        height: 27px;
+        width: 40px;
+        margin-bottom: 15px;
+        font-size: 1.1em;
+    }
+}
+
+.cards {
+        &:nth-child(2) {
+            animation-delay: .0s;
+        }
+        &:nth-child(3) {
+            animation-delay: .1s;
+        }
+        &:nth-child(4) {
+            animation-delay: .2s;
+        }
+
+        background-color: #fff;
+        padding: 15px;
+        border-radius: 15px;
+        display: flex;
+        margin-bottom: 15px;
+        box-shadow: $shadow 3px 3px 5px;
+        overflow: hidden;
+        cursor: pointer;
+        animation: itemDelay .6s;
+        animation-timing-function: cubic-bezier(.5,.12,.34,.82);
+        animation-fill-mode: both;
+        transform: scale(0);
+        max-width: 100%;
+
+        &__contain, &__title, &__description {
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+        &__contain {
+        flex: 1;
+        }
+        &__title {
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        &__price {
+            font-weight: 700;
+            display: flex;
+            align-items: flex-end;
+        }
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+
+    &__order {
+        border: 0;
+        color: $color-txt;
+        background: linear-gradient(355deg, rgba($color-primary,1), rgba($color-secondary,1));
+        padding: 15px 35px;
+        border-radius: 50px;
+        box-shadow: 2px 2px 8px $shadow;
+        font-size: 1.05em;
+        font-weight: 500;
+        &:active {
+            background: linear-gradient(355deg, rgba($color-primary,0.86), rgba($color-secondary,0.86));
+            box-shadow: 10px 10px 20px $shadow;
+            transition-duration: 1500ms;
+        }
+    }
+}
+
+@keyframes itemDelay {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
     }
 }
