@@ -170,6 +170,28 @@ a {
 .card__favorites {
   font-size: 30px;
 }
+.card__favorites .fa-solid {
+  opacity: 0;
+  transform: scale(0);
+  transition: all 0.3s ease;
+  background: linear-gradient(355deg, #9356dc, #ff79da);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+.card__favorites:hover .fa-solid {
+  opacity: 1;
+  transform: scale(1);
+}
+.card__favorites:hover .fa-regular {
+  transition: color 0.5s ease;
+  color: transparent;
+  opacity: 0;
+}
+.card .fa-heart {
+  position: absolute;
+  right: 10px;
+  bottom: 20px;
+}
 
 .useful_links_contain {
   background-color: #353535;
@@ -219,20 +241,39 @@ a {
   padding-top: 15px;
 }
 .menu__title {
-  padding: 20px 0px;
   font-size: 1.7em;
   font-weight: 500;
   font-family: "Shrikhand", sans-serif;
-  margin-bottom: 15px;
 }
 .menu__favorites {
   display: flex;
-  align-items: center;
   justify-content: space-around;
+  margin-bottom: 15px;
+  padding: 20px 0;
 }
 .menu__favorites span {
-  padding-bottom: 15px;
   font-size: 1.7em;
+}
+.menu__favorites span .fa-solid {
+  opacity: 0;
+  transform: scale(0);
+  transition: all 0.3s ease;
+  background: linear-gradient(355deg, #9356dc, #ff79da);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+.menu__favorites span:hover .fa-solid {
+  opacity: 1;
+  transform: scale(1);
+}
+.menu__favorites span:hover .fa-regular {
+  transition: color 0.5s ease;
+  color: transparent;
+  opacity: 0;
+}
+.menu__favorites .fa-heart {
+  position: absolute;
+  right: 10px;
 }
 
 .starters, .main_dish, .desserts {
@@ -259,7 +300,7 @@ a {
   box-shadow: #cdcdcd 3px 3px 5px;
   overflow: hidden;
   cursor: pointer;
-  animation: itemDelay 0.6s;
+  animation: foodDelay 0.6s;
   animation-timing-function: cubic-bezier(0.5, 0.12, 0.34, 0.82);
   animation-fill-mode: both;
   transform: scale(0);
@@ -291,6 +332,25 @@ a {
   display: flex;
   align-items: flex-end;
 }
+.cards__confirmation {
+  background-color: #99e2d0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: -16px -80px -16px 16px;
+  width: 64px;
+  transition: all 0.5s ease;
+}
+.cards span {
+  color: #fff;
+  font-size: 1.5em;
+}
+.cards:hover .cards__confirmation {
+  margin-right: -16px;
+}
+.cards:hover .cards__confirmation span {
+  animation: checkSpin 0.5s ease;
+}
 
 .btn {
   display: flex;
@@ -313,12 +373,22 @@ a {
   transition-duration: 1500ms;
 }
 
-@keyframes itemDelay {
+@keyframes foodDelay {
   0% {
-    transform: scale(0);
+    transform: translateY(50%);
+    opacity: 0;
   }
   100% {
-    transform: scale(1);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes checkSpin {
+  from {
+    transform: rotate(-360deg);
+  }
+  to {
+    transform: rotate(0);
   }
 }
 

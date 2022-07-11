@@ -186,7 +186,32 @@ a {
     }
     &__favorites {
         font-size: 30px;
-    }
+
+            .fa-solid {
+                opacity: 0;
+                transform: scale(0);
+                transition: all 0.3s ease;
+                background: linear-gradient(355deg, $color-primary, $color-secondary);
+                -webkit-text-fill-color: transparent;
+                -webkit-background-clip: text;
+            }
+
+                &:hover .fa-solid {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+                
+                &:hover .fa-regular {
+                    transition: color 0.5s ease;
+                    color: transparent;
+                    opacity: 0;
+                }
+        }
+        .fa-heart {
+            position: absolute;
+            right: 10px;
+            bottom: 20px;
+        }
 }
  .useful_links_contain {
     background-color: #353535;
@@ -243,21 +268,44 @@ a {
         padding-top: 15px;
 
         &__title {
-            padding: 20px 0px;
             font-size: 1.7em;
             font-weight: 500;
             font-family: 'Shrikhand', sans-serif;
-            margin-bottom: 15px;
         }
         &__favorites {
             display: flex;
-            align-items: center;
             justify-content: space-around;
+            margin-bottom: 15px;
+            padding: 20px 0;
 
             span {
-                padding-bottom: 15px;
                 font-size: 1.7em;
+
+                .fa-solid {
+                    opacity: 0;
+                    transform: scale(0);
+                    transition: all 0.3s ease;
+                    background: linear-gradient(355deg, $color-primary, $color-secondary);
+                    -webkit-text-fill-color: transparent;
+                    -webkit-background-clip: text;
+                }
+
+                    &:hover .fa-solid {
+                        opacity: 1;
+                        transform: scale(1);
+                    }
+                    
+                    &:hover .fa-regular {
+                        transition: color 0.5s ease;
+                        color: transparent;
+                        opacity: 0;
+                    }
             }
+            .fa-heart {
+                position: absolute;
+                right: 10px;
+            }
+
         }
 }
 
@@ -296,7 +344,7 @@ a {
         box-shadow: $shadow 3px 3px 5px;
         overflow: hidden;
         cursor: pointer;
-        animation: itemDelay .6s;
+        animation: foodDelay .6s;
         animation-timing-function: cubic-bezier(.5,.12,.34,.82);
         animation-fill-mode: both;
         transform: scale(0);
@@ -318,6 +366,28 @@ a {
             font-weight: 700;
             display: flex;
             align-items: flex-end;
+        }
+
+        &__confirmation {
+            background-color: $color-tertiary;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: -16px -80px -16px 16px;
+            width: 64px;
+            transition: all  0.5s ease;
+        }
+
+        span {
+            color: #fff;
+            font-size: 1.5em;
+         }
+        &:hover &__confirmation {
+            margin-right: -16px;
+            
+            span {
+                animation: checkSpin 0.5s ease;
+            }
         }
 }
 
@@ -343,12 +413,22 @@ a {
     }
 }
 
-@keyframes itemDelay {
-    0% {
-        transform: scale(0);
-    }
+@keyframes foodDelay {
+  0% {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 
-    100% {
-        transform: scale(1);
+@keyframes checkSpin {
+    from {
+        transform: rotate(-360deg);
+    }
+    to {
+      transform: rotate(0);
     }
 }
