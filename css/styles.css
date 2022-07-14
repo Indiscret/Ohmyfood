@@ -525,6 +525,9 @@ a {
   .functioning__steps li:hover .icone {
     color: #9356dc;
   }
+  .menu_image {
+    height: 400px;
+  }
   .card__favorites:hover .fa-solid, .menu__favorites span:hover .fa-solid {
     opacity: 1;
     transform: scale(1);
