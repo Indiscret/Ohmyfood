@@ -32,7 +32,7 @@ $color-txt: #fff;
     background-color: $bg-color;
     inset: 0;
     z-index: 1;
-    animation: disapear 4s forwards;
+    animation: disapear 3.5s forwards;
     animation-delay: 1.5s;
     &__circle
     {
@@ -177,7 +177,7 @@ a {
         border-radius: 50px;
         box-shadow: 2px 2px 8px $shadow;
         &:active {
-            background: linear-gradient(355deg, rgba($color-primary,0.86), rgba($color-secondary,0.86));
+            background: linear-gradient(355deg, rgba($color-primary,0.85), rgba($color-secondary,0.85));
             box-shadow: 10px 10px 20px $shadow;
             transition-duration: 1500ms;
         }
@@ -197,11 +197,12 @@ a {
         li {
             background-color: $bg-color;
             display: flex;
+            align-items: center;
             padding: 1.5em;
             margin: 1em .75em;
             border-radius: 20px;
 
-            &:hover {
+            &:active {
                 background-color: #dfdfdf;
             }
 
@@ -225,9 +226,9 @@ a {
                 color: #919191;
             }
 
-                &:hover .icone {
-                    color: #9356dc;
-                }
+            &:active .icone {
+                color: #9356dc;
+            }
         }
     }
 }
@@ -301,12 +302,12 @@ a {
                 -webkit-background-clip: text;
             }
 
-                &:hover .fa-solid {
+                &:active .fa-solid {
                     opacity: 1;
                     transform: scale(1);
                 }
                 
-                &:hover .fa-regular {
+                &:active .fa-regular {
                     transition: color 0.5s ease;
                     color: transparent;
                     opacity: 0;
@@ -346,7 +347,7 @@ a {
     }
 }
 
-/////////////////MENU//////////////
+///////////////////////////////////////////////////////// MENU ////////////////////////////////////////////////////
 
 .header--arrow span{
     position: absolute;
@@ -379,9 +380,9 @@ a {
         }
         &__favorites {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             margin-bottom: 15px;
-            padding: 20px 0;
+            padding: 20px 0 20px 20px;
 
             span {
                 font-size: 1.7em;
@@ -395,12 +396,12 @@ a {
                     -webkit-background-clip: text;
                 }
 
-                    &:hover .fa-solid {
+                    &:active .fa-solid {
                         opacity: 1;
                         transform: scale(1);
                     }
                     
-                    &:hover .fa-regular {
+                    &:active .fa-regular {
                         transition: color 0.5s ease;
                         color: transparent;
                         opacity: 0;
@@ -489,7 +490,7 @@ a {
             color: #fff;
             font-size: 1.5em;
          }
-        &:hover &__confirmation {
+        &:active &__confirmation {
             margin-right: -16px;
             
             span {
@@ -537,5 +538,89 @@ a {
     }
     to {
       transform: rotate(0);
+    }
+}
+
+/////////////////////////////////////////////////// TABLET /////////////////////////////////////////////////////////////////
+@media screen and (min-width: 768px) {
+    .restaurants_contain {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .restaurants_card {
+        width: 48%;
+
+        &__image {
+            height: 200px;
+        }
+    }
+
+    .useful_links {
+        
+        &__title {
+            display: flex;
+            justify-content: center;
+        }
+        ul {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}
+
+/////////////////////////////////////////////// DeskTop ///////////////////////////////////////////////////
+
+@media screen and (min-width: 1024px) {
+    
+    .description__btn:hover, .btn__order:hover {
+        background: linear-gradient(355deg, rgba($color-primary,0.85), rgba($color-secondary,0.85));
+        box-shadow: 10px 10px 20px $shadow;
+        transition-duration: 1500ms;
+    }
+    .functioning__steps {
+        display: flex;
+
+        li{
+            flex: 1;
+            cursor: pointer;
+
+            &::before {
+                position: relative;
+                left: -33px;
+            }
+
+            &:hover {
+                background-color: #dfdfdf;
+            }
+            &:hover .icone {
+                color: #9356dc;
+            }
+        }
+    }
+
+    .card__favorites, .menu__favorites span {
+        &:hover .fa-solid {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        &:hover .fa-regular {
+            transition: color 0.5s ease;
+            color: transparent;
+            opacity: 0;
+        }
+    }
+
+    .cards {
+        &:hover &__confirmation {
+            margin-right: -16px;
+            
+            span {
+                animation: checkSpin 0.5s ease;
+            }
+        }
     }
 }
