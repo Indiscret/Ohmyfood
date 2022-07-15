@@ -116,9 +116,18 @@ body {
   font-size: 1.1em;
   box-shadow: 0 3px 5px #cdcdcd inset;
 }
-.location .location__text {
+.location span {
+  display: flex;
+  align-items: center;
+  margin-left: 90px;
+}
+
+#location__text {
   margin-left: 10px;
   font-weight: 500;
+  font-family: "Roboto", sans-serif;
+  border: none;
+  background-color: #f2f2f2;
 }
 
 a {
@@ -147,7 +156,7 @@ a {
   border-radius: 50px;
   box-shadow: 2px 2px 8px #cdcdcd;
 }
-.description__btn:active {
+.description__btn:active, .description__btn:hover {
   background: linear-gradient(355deg, rgba(147, 86, 220, 0.85), rgba(255, 121, 218, 0.85));
   box-shadow: 10px 10px 20px #cdcdcd;
   transition-duration: 1500ms;
@@ -171,7 +180,7 @@ a {
   margin: 1em 0.75em;
   border-radius: 20px;
 }
-.functioning__steps li:active {
+.functioning__steps li:active, .functioning__steps li:hover {
   background-color: #dfdfdf;
 }
 .functioning__steps li::before {
@@ -192,7 +201,7 @@ a {
   margin-right: 15px;
   color: #919191;
 }
-.functioning__steps li:active .icone {
+.functioning__steps li:hover .icone {
   color: #9356dc;
 }
 
@@ -264,11 +273,11 @@ a {
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
 }
-.card__favorites:active .fa-solid {
+.card__favorites:active, .card__favorites:hover .fa-solid {
   opacity: 1;
   transform: scale(1);
 }
-.card__favorites:active .fa-regular {
+.card__favorites:active, .card__favorites:hover .fa-regular {
   transition: color 0.5s ease;
   color: transparent;
   opacity: 0;
@@ -320,7 +329,6 @@ a {
 
 .menu {
   background-color: #f2f2f2;
-  z-index: 1;
   margin-top: -4em;
   border-radius: 35px 35px 0 0;
   position: relative;
@@ -328,7 +336,6 @@ a {
 }
 .menu__title {
   font-size: 1.7em;
-  font-weight: 500;
   font-family: "Shrikhand", sans-serif;
 }
 .menu__favorites {
@@ -348,11 +355,11 @@ a {
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
 }
-.menu__favorites span:active .fa-solid {
+.menu__favorites span:active, .menu__favorites span:hover .fa-solid {
   opacity: 1;
   transform: scale(1);
 }
-.menu__favorites span:active .fa-regular {
+.menu__favorites span:active, .menu__favorites span:hover .fa-regular {
   transition: color 0.5s ease;
   color: transparent;
   opacity: 0;
@@ -368,13 +375,18 @@ a {
 }
 .starters__title, .main_dish__title, .desserts__title {
   text-transform: uppercase;
-  font-weight: 400;
   position: relative;
-  border-bottom: #99e2d0 solid 4px;
-  height: 27px;
-  width: 40px;
   margin-bottom: 15px;
   font-size: 1.1em;
+}
+.starters__title::after, .main_dish__title::after, .desserts__title::after {
+  content: " ";
+  background-color: #99e2d0;
+  position: absolute;
+  left: 0;
+  top: 22px;
+  width: 40px;
+  height: 4px;
 }
 
 .cards {
@@ -390,7 +402,6 @@ a {
   animation-timing-function: cubic-bezier(0.5, 0.12, 0.34, 0.82);
   animation-fill-mode: both;
   transform: scale(0);
-  max-width: 100%;
 }
 .cards:nth-child(2) {
   animation-delay: 0s;
@@ -434,10 +445,10 @@ a {
   color: #fff;
   font-size: 1.5em;
 }
-.cards:active .cards__confirmation {
+.cards:active, .cards:hover .cards__confirmation {
   margin-right: -16px;
 }
-.cards:active .cards__confirmation span {
+.cards:active span, .cards:hover .cards__confirmation span {
   animation: checkSpin 0.5s ease;
 }
 
@@ -456,7 +467,7 @@ a {
   font-size: 1.05em;
   font-weight: 500;
 }
-.btn__order:active {
+.btn__order:active, .btn__order:hover {
   background: linear-gradient(355deg, rgba(147, 86, 220, 0.86), rgba(255, 121, 218, 0.86));
   box-shadow: 10px 10px 20px #cdcdcd;
   transition-duration: 1500ms;
@@ -499,10 +510,17 @@ a {
   }
   .useful_links ul {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+  }
+  .useful_links ul li {
+    margin: 0 25px;
   }
 }
 @media screen and (min-width: 1024px) {
+  .header, .header--arrow {
+    background-color: #fff;
+    box-shadow: 0 0 10px #cdcdcd;
+  }
   .description__btn:hover, .btn__order:hover {
     background: linear-gradient(355deg, rgba(147, 86, 220, 0.85), rgba(255, 121, 218, 0.85));
     box-shadow: 10px 10px 20px #cdcdcd;
@@ -526,7 +544,16 @@ a {
     color: #9356dc;
   }
   .menu_image {
-    height: 400px;
+    position: fixed;
+    top: 0;
+    z-index: -1;
+  }
+  .menu {
+    max-width: 765px;
+    margin: 128px auto;
+    box-shadow: 0 0 10px #cdcdcd;
+    max-width: 769px;
+    border-radius: 35px;
   }
   .card__favorites:hover .fa-solid, .menu__favorites span:hover .fa-solid {
     opacity: 1;
@@ -536,6 +563,7 @@ a {
     transition: color 0.5s ease;
     color: transparent;
     opacity: 0;
+    cursor: pointer;
   }
   .cards:hover .cards__confirmation {
     margin-right: -16px;

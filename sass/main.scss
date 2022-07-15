@@ -145,11 +145,22 @@ $color-txt: #fff;
     font-size: 1.1em;
     box-shadow: 0 3px 5px $shadow inset;
 
-    .location__text {
-        margin-left: 10px;
-        font-weight: 500;
+    span {
+        display: flex;
+        align-items: center;
+        margin-left: 90px;
     }
 }
+
+
+#location__text {
+    margin-left: 10px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    border: none;
+    background-color: $bg-color;
+}
+
 
 a {
     text-decoration: none;
@@ -176,7 +187,7 @@ a {
         padding: 13px;
         border-radius: 50px;
         box-shadow: 2px 2px 8px $shadow;
-        &:active {
+        &:active, &:hover {
             background: linear-gradient(355deg, rgba($color-primary,0.85), rgba($color-secondary,0.85));
             box-shadow: 10px 10px 20px $shadow;
             transition-duration: 1500ms;
@@ -202,7 +213,7 @@ a {
             margin: 1em .75em;
             border-radius: 20px;
 
-            &:active {
+            &:active, &:hover {
                 background-color: #dfdfdf;
             }
 
@@ -226,7 +237,7 @@ a {
                 color: #919191;
             }
 
-            &:active .icone {
+            &:hover .icone {
                 color: #9356dc;
             }
         }
@@ -302,12 +313,12 @@ a {
                 -webkit-background-clip: text;
             }
 
-                &:active .fa-solid {
+                &:active, &:hover .fa-solid {
                     opacity: 1;
                     transform: scale(1);
                 }
                 
-                &:active .fa-regular {
+                &:active, &:hover .fa-regular {
                     transition: color 0.5s ease;
                     color: transparent;
                     opacity: 0;
@@ -367,7 +378,7 @@ a {
 
 .menu {
         background-color: $bg-color;
-        z-index: 1;
+        // z-index: 1;
         margin-top: -4em;
         border-radius: 35px 35px 0 0;
         position: relative;
@@ -375,7 +386,7 @@ a {
 
         &__title {
             font-size: 1.7em;
-            font-weight: 500;
+            // font-weight: 500;
             font-family: 'Shrikhand', sans-serif;
         }
         &__favorites {
@@ -396,12 +407,12 @@ a {
                     -webkit-background-clip: text;
                 }
 
-                    &:active .fa-solid {
+                    &:active, &:hover .fa-solid {
                         opacity: 1;
                         transform: scale(1);
                     }
                     
-                    &:active .fa-regular {
+                    &:active, &:hover .fa-regular {
                         transition: color 0.5s ease;
                         color: transparent;
                         opacity: 0;
@@ -421,13 +432,20 @@ a {
 
     &__title {
         text-transform: uppercase;
-        font-weight: 400;
+        // font-weight: 400;
         position: relative;
-        border-bottom: $color-tertiary solid 4px;
-        height: 27px;
-        width: 40px;
         margin-bottom: 15px;
         font-size: 1.1em;
+
+        &::after {
+            content: " ";
+            background-color: $color-tertiary;
+            position: absolute;
+            left: 0;
+            top: 22px;
+            width: 40px;
+            height: 4px;
+        }
     }
 }
 
@@ -456,7 +474,7 @@ a {
         animation-timing-function: cubic-bezier(.5,.12,.34,.82);
         animation-fill-mode: both;
         transform: scale(0);
-        max-width: 100%;
+        // max-width: 100%;
 
         &__contain, &__title, &__description {
             white-space: nowrap;
@@ -490,7 +508,7 @@ a {
             color: #fff;
             font-size: 1.5em;
          }
-        &:active &__confirmation {
+        &:active, &:hover &__confirmation {
             margin-right: -16px;
             
             span {
@@ -513,7 +531,7 @@ a {
         box-shadow: 2px 2px 8px $shadow;
         font-size: 1.05em;
         font-weight: 500;
-        &:active {
+        &:active, &:hover{
             background: linear-gradient(355deg, rgba($color-primary,0.86), rgba($color-secondary,0.86));
             box-shadow: 10px 10px 20px $shadow;
             transition-duration: 1500ms;
@@ -566,7 +584,11 @@ a {
         }
         ul {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
+
+            li {
+                margin: 0 25px;
+            }
         }
     }
 }
@@ -574,6 +596,11 @@ a {
 /////////////////////////////////////////////// DeskTop ///////////////////////////////////////////////////
 
 @media screen and (min-width: 1024px) {
+
+    .header, .header--arrow {
+        background-color: #fff;
+        box-shadow:  0 0 10px $shadow;
+    }
     
     .description__btn:hover, .btn__order:hover {
         background: linear-gradient(355deg, rgba($color-primary,0.85), rgba($color-secondary,0.85));
@@ -602,7 +629,16 @@ a {
     }
 
     .menu_image {
-        height: 400px;
+        position: fixed;
+        top: 0;
+        z-index: -1;
+    }
+    .menu {
+        max-width: 765px;
+        margin: 128px auto;
+        box-shadow: 0 0 10px $shadow;
+        max-width: 769px;
+        border-radius: 35px;
     }
 
     .card__favorites, .menu__favorites span {
@@ -615,6 +651,7 @@ a {
             transition: color 0.5s ease;
             color: transparent;
             opacity: 0;
+            cursor: pointer;
         }
     }
 
