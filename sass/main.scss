@@ -11,39 +11,8 @@
 './compoments/loader',
 './compoments/steps',
 
+'./layout/footer',
 './layout/header';
-
-
- .useful_links_contain {
-    background-color: #353535;
-    padding: 15px;
-}
-
-.useful_links {
-    &__title {
-        color: $color-txt;
-        font-family: 'Shrikhand' , sans-serif;
-        font-size: 1.15em;
-        margin-bottom: 13px;
-        margin-top: 10px;
-    }
-
-    ul li {
-        line-height: 1.5;
-    }
-
-    &__link {
-        color: $color-txt;
-
-        span i {
-            font-size: 0.8em;
-            margin-right: 5px;
-        }
-    }
-}
-
-///////////////////////////////////////////////////////// MENU ////////////////////////////////////////////////////
-
 
 
 .menu_image {

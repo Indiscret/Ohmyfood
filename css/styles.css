@@ -319,28 +319,6 @@ a {
   color: #9356dc;
 }
 
-.header,
-.header--arrow {
-  display: flex;
-  justify-content: center;
-  padding: 15px;
-}
-.header__logo,
-.header--arrow__logo {
-  width: 200px;
-}
-
-.header--arrow span {
-  position: absolute;
-  left: 8px;
-  font-size: 1.3em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 1.7em;
-  height: 1.7em;
-}
-
 .useful_links_contain {
   background-color: #353535;
   padding: 15px;
@@ -362,6 +340,28 @@ a {
 .useful_links__link span i {
   font-size: 0.8em;
   margin-right: 5px;
+}
+
+.header,
+.header--arrow {
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+}
+.header__logo,
+.header--arrow__logo {
+  width: 200px;
+}
+
+.header--arrow span {
+  position: absolute;
+  left: 8px;
+  font-size: 1.3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.7em;
+  height: 1.7em;
 }
 
 .menu_image {
