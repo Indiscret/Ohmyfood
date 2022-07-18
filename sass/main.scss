@@ -6,6 +6,7 @@
 './base/typography',
 
 './compoments/buttons',
+'./compoments/cards',
 './compoments/intro',
 './compoments/loader',
 './compoments/steps',
@@ -13,93 +14,6 @@
 './layout/header';
 
 
-#Restaurants {
-    background-color: #f8f8f8;
-    padding: 15px;
-}
-
-.restaurants_title {
-        font-size: 1.5em;
-        font-weight: bold;
-        margin-bottom: 15px;
-}
-.restaurants_contain {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 15px;
-}
-
-.restaurants_card {
-    background-color: #fff;
-    border-radius: 20px;
-    box-shadow: 5px 5px 6px $shadow;
-    margin-bottom: 25px;
-    position: relative;
-
-    &__image {
-        width: 100%;
-        border-radius: 20px 20px 0 0;
-        object-fit: cover;
-        height: 180px;
-    }
-    &__new {
-        background-color: $color-tertiary;
-        color: #1c6553;
-        padding: 8px;
-        border-radius: 2px;
-        position: absolute;
-        top: 15px;
-        right: 10px;
-        font-weight: 500;
-        font-size: 0.95em;
-    }
-}
-
-.card{
-    padding: 16px;
-    display: flex;
-    justify-content: space-between;
-    font-size: 17px;
-
-    &__title {
-        font-weight: bold;
-        display: flex;
-        flex-direction: column;
-
-        span {
-            font-weight: normal;
-            margin-top: 5px;
-        }
-    }
-    &__favorites {
-        font-size: 30px;
-
-            .fa-solid {
-                opacity: 0;
-                transform: scale(0);
-                transition: all 0.3s ease;
-                background: linear-gradient(355deg, $color-primary, $color-secondary);
-                -webkit-text-fill-color: transparent;
-                -webkit-background-clip: text;
-            }
-
-                &:active, &:hover .fa-solid {
-                    opacity: 1;
-                    transform: scale(1);
-                }
-                
-                &:active, &:hover .fa-regular {
-                    transition: color 0.5s ease;
-                    color: transparent;
-                    opacity: 0;
-                }
-        }
-        .fa-heart {
-            position: absolute;
-            right: 10px;
-            bottom: 20px;
-        }
-}
  .useful_links_contain {
     background-color: #353535;
     padding: 15px;

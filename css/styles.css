@@ -85,6 +85,89 @@ a {
   transition-duration: 1500ms;
 }
 
+#Restaurants {
+  background-color: #f8f8f8;
+  padding: 15px;
+}
+
+.restaurants_title {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.restaurants_contain {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.restaurants_card {
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 5px 5px 6px #cdcdcd;
+  margin-bottom: 25px;
+  position: relative;
+}
+.restaurants_card__image {
+  width: 100%;
+  border-radius: 20px 20px 0 0;
+  object-fit: cover;
+  height: 180px;
+}
+.restaurants_card__new {
+  background-color: #99e2d0;
+  color: #1c6553;
+  padding: 8px;
+  border-radius: 2px;
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  font-weight: 500;
+  font-size: 0.95em;
+}
+
+.card {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 17px;
+}
+.card__title {
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+}
+.card__title span {
+  font-weight: normal;
+  margin-top: 5px;
+}
+.card__favorites {
+  font-size: 30px;
+}
+.card__favorites .fa-solid {
+  opacity: 0;
+  transform: scale(0);
+  transition: all 0.3s ease;
+  background: linear-gradient(355deg, #9356dc, #ff79da);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+.card__favorites:active, .card__favorites:hover .fa-solid {
+  opacity: 1;
+  transform: scale(1);
+}
+.card__favorites:active, .card__favorites:hover .fa-regular {
+  transition: color 0.5s ease;
+  color: transparent;
+  opacity: 0;
+}
+.card .fa-heart {
+  position: absolute;
+  right: 10px;
+  bottom: 20px;
+}
+
 .location {
   display: flex;
   justify-content: center;
@@ -256,89 +339,6 @@ a {
   justify-content: center;
   width: 1.7em;
   height: 1.7em;
-}
-
-#Restaurants {
-  background-color: #f8f8f8;
-  padding: 15px;
-}
-
-.restaurants_title {
-  font-size: 1.5em;
-  font-weight: bold;
-  margin-bottom: 15px;
-}
-
-.restaurants_contain {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 15px;
-}
-
-.restaurants_card {
-  background-color: #fff;
-  border-radius: 20px;
-  box-shadow: 5px 5px 6px #cdcdcd;
-  margin-bottom: 25px;
-  position: relative;
-}
-.restaurants_card__image {
-  width: 100%;
-  border-radius: 20px 20px 0 0;
-  object-fit: cover;
-  height: 180px;
-}
-.restaurants_card__new {
-  background-color: #99e2d0;
-  color: #1c6553;
-  padding: 8px;
-  border-radius: 2px;
-  position: absolute;
-  top: 15px;
-  right: 10px;
-  font-weight: 500;
-  font-size: 0.95em;
-}
-
-.card {
-  padding: 16px;
-  display: flex;
-  justify-content: space-between;
-  font-size: 17px;
-}
-.card__title {
-  font-weight: bold;
-  display: flex;
-  flex-direction: column;
-}
-.card__title span {
-  font-weight: normal;
-  margin-top: 5px;
-}
-.card__favorites {
-  font-size: 30px;
-}
-.card__favorites .fa-solid {
-  opacity: 0;
-  transform: scale(0);
-  transition: all 0.3s ease;
-  background: linear-gradient(355deg, #9356dc, #ff79da);
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-}
-.card__favorites:active, .card__favorites:hover .fa-solid {
-  opacity: 1;
-  transform: scale(1);
-}
-.card__favorites:active, .card__favorites:hover .fa-regular {
-  transition: color 0.5s ease;
-  color: transparent;
-  opacity: 0;
-}
-.card .fa-heart {
-  position: absolute;
-  right: 10px;
-  bottom: 20px;
 }
 
 .useful_links_contain {
