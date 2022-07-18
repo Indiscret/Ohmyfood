@@ -180,49 +180,6 @@ a {
   transition-duration: 1500ms;
 }
 
-.functioning {
-  padding: 15px;
-}
-.functioning__title {
-  font-size: 1.5em;
-  font-weight: bold;
-}
-.functioning__steps {
-  counter-reset: countlist;
-}
-.functioning__steps li {
-  background-color: #f2f2f2;
-  display: flex;
-  align-items: center;
-  padding: 1.5em;
-  margin: 1em 0.75em;
-  border-radius: 20px;
-}
-.functioning__steps li:active, .functioning__steps li:hover {
-  background-color: #dfdfdf;
-}
-.functioning__steps li::before {
-  counter-increment: countlist 1;
-  content: counter(countlist) " ";
-  background: #9356dc;
-  height: 1.5rem;
-  width: 1.5rem;
-  border-radius: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-  position: absolute;
-  left: 1em;
-}
-.functioning__steps li .icone {
-  margin-right: 15px;
-  color: #919191;
-}
-.functioning__steps li:hover .icone {
-  color: #9356dc;
-}
-
 #Restaurants {
   background-color: #f8f8f8;
   padding: 15px;

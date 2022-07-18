@@ -1,0 +1,48 @@
+.functioning {
+    padding: 15px;
+
+    &__title {
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+    &__steps {
+        counter-reset: countlist;
+
+        li {
+            background-color: $bg-color;
+            display: flex;
+            align-items: center;
+            padding: 1.5em;
+            margin: 1em .75em;
+            border-radius: 20px;
+
+            &:active, &:hover {
+                background-color: #dfdfdf;
+            }
+
+            &::before {
+                counter-increment: countlist 1;
+                content: counter(countlist) " ";
+                background: $color-primary;
+                height: 1.5rem;
+                width: 1.5rem;
+                border-radius: 100px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: $color-txt;
+                position: absolute;
+                left: 1em;
+            }
+
+            .icone {
+                margin-right: 15px;
+                color: #919191;
+            }
+
+            &:hover .icone {
+                color: $color-primary;
+            }
+        }
+    }
+}
