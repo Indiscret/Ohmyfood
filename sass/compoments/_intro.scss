@@ -1,0 +1,38 @@
+.location {
+    display: flex;
+    justify-content: center;
+    background-color: $bg-color;
+    padding: 15px;
+    font-size: 1.1em;
+    box-shadow: 0 3px 5px $shadow inset;
+
+    span {
+        display: flex;
+        align-items: center;
+        margin-left: 90px;
+    }
+}
+
+#location__text {
+    margin-left: 10px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    border: none;
+    background-color: $bg-color;
+}
+
+.description {
+    padding: 2em;
+    text-align: center;
+    background-color: #f8f8f8;
+
+    &__title {
+        font-size: 1.5em;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+    &__paragraph {
+        font-weight: 300;
+        margin-bottom: 30px;
+    }
+}
