@@ -5,24 +5,13 @@
 './base/base',
 './base/typography',
 
+'./compoments/buttons',
 './compoments/intro',
 './compoments/loader',
 './compoments/steps',
 
 './layout/header';
 
-.description__btn {
-    color: $color-txt;
-    background: linear-gradient(355deg, rgba($color-primary,1), rgba($color-secondary,1));
-    padding: 13px;
-    border-radius: 50px;
-    box-shadow: 2px 2px 8px $shadow;
-    &:active, &:hover {
-        background: linear-gradient(355deg, rgba($color-primary,0.85), rgba($color-secondary,0.85));
-        box-shadow: 10px 10px 20px $shadow;
-        transition-duration: 1500ms;
-    }
-}
 
 #Restaurants {
     background-color: #f8f8f8;
@@ -288,29 +277,6 @@
             }
         }
 }
-
-.btn {
-    display: flex;
-    justify-content: center;
-    padding: 40px 0;
-
-    &__order {
-        border: 0;
-        color: $color-txt;
-        background: linear-gradient(355deg, rgba($color-primary,1), rgba($color-secondary,1));
-        padding: 15px 35px;
-        border-radius: 50px;
-        box-shadow: 2px 2px 8px $shadow;
-        font-size: 1.05em;
-        font-weight: 500;
-        &:active, &:hover{
-            background: linear-gradient(355deg, rgba($color-primary,0.86), rgba($color-secondary,0.86));
-            box-shadow: 10px 10px 20px $shadow;
-            transition-duration: 1500ms;
-        }
-    }
-}
-
 
 /////////////////////////////////////////////////// TABLET /////////////////////////////////////////////////////////////////
 @media screen and (min-width: 768px) {
