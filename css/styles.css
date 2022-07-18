@@ -14,6 +14,11 @@ body {
   margin: auto;
 }
 
+a {
+  text-decoration: none;
+  color: #000;
+}
+
 .loader {
   position: fixed;
   display: flex;
@@ -128,11 +133,6 @@ body {
   font-family: "Roboto", sans-serif;
   border: none;
   background-color: #f2f2f2;
-}
-
-a {
-  text-decoration: none;
-  color: #000;
 }
 
 .description {
