@@ -90,20 +90,6 @@ a {
   box-shadow: 0 0 20px #99e2d0, 0 0 60px #99e2d0;
 }
 
-@keyframes animate {
-  0% {
-    transform: rotate(-360deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@keyframes disapear {
-  100% {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
 .header, .header--arrow {
   display: flex;
   justify-content: center;
@@ -473,24 +459,6 @@ a {
   transition-duration: 1500ms;
 }
 
-@keyframes foodDelay {
-  0% {
-    transform: translateY(50%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-@keyframes checkSpin {
-  from {
-    transform: rotate(-360deg);
-  }
-  to {
-    transform: rotate(0);
-  }
-}
 @media screen and (min-width: 768px) {
   .restaurants_contain {
     display: flex;
