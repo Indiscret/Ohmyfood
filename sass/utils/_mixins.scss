@@ -1,0 +1,54 @@
+@mixin btn {
+        border: 0;
+        color: $color-txt;
+        background: linear-gradient(355deg, rgba($color-primary,1), rgba($color-secondary,1));
+        padding: 15px 35px;
+        border-radius: 50px;
+        box-shadow: 2px 2px 8px $shadow;
+        font-size: 1.05em;
+        font-weight: 500;
+        &:hover{
+            background: linear-gradient(355deg, rgba($color-primary,0.85), rgba($color-secondary,0.85));
+            box-shadow: 10px 10px 20px $shadow;
+            transition-duration: 1500ms;
+        }
+}
+
+@mixin new {
+        background-color: $color-tertiary;
+        color: #1c6553;
+        padding: 8px;
+        border-radius: 2px;
+        position: absolute;
+        top: 15px;
+        right: 10px;
+        font-weight: 500;
+        font-size: 0.95em;
+}
+
+@mixin heart {
+    font-size: 30px;
+
+    .fa-solid {
+        opacity: 0;
+        transform: scale(0);
+        transition: all 0.3s ease;
+        background: linear-gradient(355deg, $color-primary, $color-secondary);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+
+        &:hover .fa-solid {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        &:hover .fa-regular {
+            transition: color 0.5s ease;
+            color: transparent;
+            opacity: 0;
+        }
+}
+
+    

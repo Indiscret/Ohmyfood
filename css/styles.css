@@ -52,13 +52,16 @@ a {
 }
 
 .description__btn {
+  border: 0;
   color: #fff;
   background: linear-gradient(355deg, #9356dc, #ff79da);
-  padding: 13px;
+  padding: 15px 35px;
   border-radius: 50px;
   box-shadow: 2px 2px 8px #cdcdcd;
+  font-size: 1.05em;
+  font-weight: 500;
 }
-.description__btn:active, .description__btn:hover {
+.description__btn:hover {
   background: linear-gradient(355deg, rgba(147, 86, 220, 0.85), rgba(255, 121, 218, 0.85));
   box-shadow: 10px 10px 20px #cdcdcd;
   transition-duration: 1500ms;
@@ -79,8 +82,8 @@ a {
   font-size: 1.05em;
   font-weight: 500;
 }
-.btn__order:active, .btn__order:hover {
-  background: linear-gradient(355deg, rgba(147, 86, 220, 0.86), rgba(255, 121, 218, 0.86));
+.btn__order:hover {
+  background: linear-gradient(355deg, rgba(147, 86, 220, 0.85), rgba(255, 121, 218, 0.85));
   box-shadow: 10px 10px 20px #cdcdcd;
   transition-duration: 1500ms;
 }
@@ -150,19 +153,20 @@ a {
   transform: scale(0);
   transition: all 0.3s ease;
   background: linear-gradient(355deg, #9356dc, #ff79da);
-  -webkit-text-fill-color: transparent;
+  background-clip: text;
   -webkit-background-clip: text;
+  color: transparent;
 }
-.card__favorites:active, .card__favorites:hover .fa-solid {
+.card__favorites:hover .fa-solid {
   opacity: 1;
   transform: scale(1);
 }
-.card__favorites:active, .card__favorites:hover .fa-regular {
+.card__favorites:hover .fa-regular {
   transition: color 0.5s ease;
   color: transparent;
   opacity: 0;
 }
-.card .fa-heart {
+.card__favorites .fa-heart {
   position: absolute;
   right: 10px;
   bottom: 20px;
@@ -387,21 +391,22 @@ a {
   padding: 20px 0 20px 20px;
 }
 .menu__favorites span {
-  font-size: 1.7em;
+  font-size: 30px;
 }
 .menu__favorites span .fa-solid {
   opacity: 0;
   transform: scale(0);
   transition: all 0.3s ease;
   background: linear-gradient(355deg, #9356dc, #ff79da);
-  -webkit-text-fill-color: transparent;
+  background-clip: text;
   -webkit-background-clip: text;
+  color: transparent;
 }
-.menu__favorites span:active, .menu__favorites span:hover .fa-solid {
+.menu__favorites span:hover .fa-solid {
   opacity: 1;
   transform: scale(1);
 }
-.menu__favorites span:active, .menu__favorites span:hover .fa-regular {
+.menu__favorites span:hover .fa-regular {
   transition: color 0.5s ease;
   color: transparent;
   opacity: 0;
